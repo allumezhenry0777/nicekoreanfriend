@@ -1,103 +1,95 @@
-import Image from "next/image";
+import Link from "next/link";
+import { getAllCategories, getPublishedArticles } from "@/lib/content";
+import { ArticleCard } from "@/components/ArticleCard";
+import { JsonLdScript } from "@/components/JsonLdScript";
+import { organizationJsonLd, webSiteJsonLd } from "@/lib/jsonld";
+import { AdSlot } from "@/components/AdSlot";
+import { site } from "@/lib/site";
+import type { Metadata } from "next";
 
-export default function Home() {
+export const metadata: Metadata = {
+  alternates: { canonical: site.url },
+};
+
+export default function HomePage() {
+  const categories = getAllCategories();
+  const latest = getPublishedArticles().slice(0, 6);
+  const categoryNames = new Map(categories.map((c) => [c.slug, c.frontmatter.name]));
+
   return (
-    <div className="font-sans grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20">
-      <main className="flex flex-col gap-[32px] row-start-2 items-center sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol className="font-mono list-inside list-decimal text-sm/6 text-center sm:text-left">
-          <li className="mb-2 tracking-[-.01em]">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] font-mono font-semibold px-1 py-0.5 rounded">
-              src/app/page.tsx
-            </code>
-            .
-          </li>
-          <li className="tracking-[-.01em]">
-            Save and see your changes instantly.
-          </li>
-        </ol>
+    <>
+      <JsonLdScript data={[organizationJsonLd(), webSiteJsonLd()]} />
 
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
-          <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:w-auto"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
-          </a>
-          <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 w-full sm:w-auto md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Read our docs
-          </a>
+      <section className="border-b border-sand bg-white">
+        <div className="mx-auto max-w-6xl px-4 py-16 sm:py-24">
+          <p className="text-sm font-bold uppercase tracking-widest text-accent">
+            안녕! Welcome to Korea
+          </p>
+          <h1 className="mt-3 max-w-2xl text-4xl font-extrabold leading-tight tracking-tight text-ink sm:text-5xl">
+            Korea, explained like a <span className="text-accent">friend</span> would.
+          </h1>
+          <p className="mt-4 max-w-xl text-lg leading-relaxed text-ink/70">
+            No fluff, no outdated tips. Practical English guides for visiting and living in Korea —
+            from your first T-money card to opening a bank account.
+          </p>
+          <div className="mt-8 flex flex-wrap gap-3">
+            <Link
+              href="/start-here"
+              className="rounded-xl bg-accent px-6 py-3 font-semibold text-white shadow-sm transition-colors hover:bg-accent/90"
+            >
+              Start Here → your first 72 hours
+            </Link>
+            <Link
+              href="/search"
+              className="rounded-xl border border-sand bg-cream px-6 py-3 font-semibold text-ink transition-colors hover:border-accent hover:text-accent"
+            >
+              Search the guides
+            </Link>
+          </div>
         </div>
-      </main>
-      <footer className="row-start-3 flex gap-[24px] flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
-      </footer>
-    </div>
+      </section>
+
+      <section className="mx-auto max-w-6xl px-4 py-12" aria-labelledby="browse-heading">
+        <h2 id="browse-heading" className="text-2xl font-bold text-ink">
+          Browse by topic
+        </h2>
+        <div className="mt-6 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+          {categories.map((c) => (
+            <Link
+              key={c.slug}
+              href={`/${c.slug}`}
+              className="group rounded-xl border border-sand bg-white p-5 transition-all hover:-translate-y-0.5 hover:shadow-md"
+            >
+              <span className="text-2xl" aria-hidden>
+                {c.frontmatter.emoji}
+              </span>
+              <h3 className="mt-2 font-bold text-ink group-hover:text-accent">
+                {c.frontmatter.name}
+              </h3>
+              <p className="mt-1 text-sm leading-relaxed text-ink/60">
+                {c.frontmatter.shortDescription}
+              </p>
+            </Link>
+          ))}
+        </div>
+      </section>
+
+      <AdSlot slot="home-mid" className="mx-auto max-w-6xl px-4" />
+
+      <section className="mx-auto max-w-6xl px-4 py-12" aria-labelledby="latest-heading">
+        <h2 id="latest-heading" className="text-2xl font-bold text-ink">
+          Latest guides
+        </h2>
+        <div className="mt-6 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+          {latest.map((a) => (
+            <ArticleCard
+              key={a.slug}
+              article={a}
+              categoryName={categoryNames.get(a.frontmatter.category)}
+            />
+          ))}
+        </div>
+      </section>
+    </>
   );
 }

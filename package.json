@@ -4,24 +4,36 @@
   "private": true,
   "scripts": {
     "dev": "next dev --turbopack",
+    "prebuild": "npm run validate-content && npm run check-links",
     "build": "next build --turbopack",
+    "postbuild": "pagefind --site .next/server/app --output-path public/pagefind",
     "start": "next start",
-    "lint": "eslint"
+    "lint": "eslint",
+    "validate-content": "tsx scripts/validate-content.ts",
+    "check-links": "tsx scripts/check-links.ts",
+    "generate-placeholders": "node scripts/generate-placeholders.mjs"
   },
   "dependencies": {
+    "gray-matter": "^4.0.3",
+    "next": "15.5.24",
+    "next-mdx-remote": "^6.0.0",
     "react": "19.1.0",
     "react-dom": "19.1.0",
-    "next": "15.5.24"
+    "remark-gfm": "^4.0.1",
+    "zod": "^4.5.2"
   },
   "devDependencies": {
-    "typescript": "^5",
+    "@eslint/eslintrc": "^3",
+    "@tailwindcss/postcss": "^4",
+    "@tailwindcss/typography": "^0.5.20",
     "@types/node": "^20",
     "@types/react": "^19",
     "@types/react-dom": "^19",
-    "@tailwindcss/postcss": "^4",
-    "tailwindcss": "^4",
     "eslint": "^9",
     "eslint-config-next": "15.5.24",
-    "@eslint/eslintrc": "^3"
+    "pagefind": "^1.5.2",
+    "tailwindcss": "^4",
+    "tsx": "^4.23.12",
+    "typescript": "^5"
   }
 }
