@@ -67,17 +67,32 @@ function imageIfExists(relPath: string): string | undefined {
 }
 
 /**
- * Every article gets two brand illustrations: a hero (rendered by the page
- * template) and an inline one injected before the article's 2nd H2. Published
- * articles use their own art; drafts fall back to their category's art.
+ * Every article gets two editorial images: a hero (rendered by the page
+ * template) and an inline one injected before the article's 2nd H2. A
+ * topic-specific raster photo wins when present, followed by the category
+ * photo set. The original SVG artwork remains as a final fallback.
  */
 function resolveArtwork(fm: ArticleFrontmatter, slug: string) {
   const own = `/images/articles/${slug}`;
   const cat = `/images/categories/${fm.category}`;
   const hero =
-    imageIfExists(`${own}-1.svg`) ?? imageIfExists(`${cat}-1.svg`);
+    imageIfExists(`${own}-1.webp`) ??
+    imageIfExists(`${own}-1.jpg`) ??
+    imageIfExists(`${own}-1.png`) ??
+    imageIfExists(`${cat}-1.webp`) ??
+    imageIfExists(`${cat}-1.jpg`) ??
+    imageIfExists(`${cat}-1.png`) ??
+    imageIfExists(`${own}-1.svg`) ??
+    imageIfExists(`${cat}-1.svg`);
   const inline =
-    imageIfExists(`${own}-2.svg`) ?? imageIfExists(`${cat}-2.svg`);
+    imageIfExists(`${own}-2.webp`) ??
+    imageIfExists(`${own}-2.jpg`) ??
+    imageIfExists(`${own}-2.png`) ??
+    imageIfExists(`${cat}-2.webp`) ??
+    imageIfExists(`${cat}-2.jpg`) ??
+    imageIfExists(`${cat}-2.png`) ??
+    imageIfExists(`${own}-2.svg`) ??
+    imageIfExists(`${cat}-2.svg`);
   return { hero, inline };
 }
 
@@ -109,7 +124,7 @@ export function getAllArticles(): Article[] {
     const art = resolveArtwork(parsed.data, slug);
     const body =
       art.inline !== undefined
-        ? injectInlineImage(content, art.inline, `${parsed.data.title} — illustration`)
+        ? injectInlineImage(content, art.inline, `${parsed.data.title} — editorial photo`)
         : content;
     return {
       slug,

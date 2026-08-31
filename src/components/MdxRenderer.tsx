@@ -37,7 +37,6 @@ const components = {
   },
   img: ({ src = "", alt = "", title }: { src?: string; alt?: string; title?: string }) => (
     <figure className="my-8">
-      {/* Brand SVG illustration — eslint-disable-next-line @next/next/no-img-element */}
       {/* eslint-disable-next-line @next/next/no-img-element */}
       <img
         src={typeof src === "string" ? src : ""}
