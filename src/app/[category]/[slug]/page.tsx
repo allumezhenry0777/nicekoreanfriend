@@ -118,6 +118,19 @@ export default async function ArticlePage({ params }: Props) {
           </div>
         </header>
 
+        {article.heroImage && (
+          <figure className="mt-6">
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            <img
+              src={article.heroImage}
+              alt={`${fm.title} — illustration`}
+              width={800}
+              height={450}
+              className="w-full rounded-2xl border border-sand bg-white"
+            />
+          </figure>
+        )}
+
         <QuickAnswer>{fm.quickAnswer}</QuickAnswer>
 
         <TableOfContents body={article.body} />

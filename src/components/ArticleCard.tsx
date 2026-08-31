@@ -10,7 +10,19 @@ export function ArticleCard({
 }) {
   const fm = article.frontmatter;
   return (
-    <article className="group relative flex h-full flex-col rounded-xl border border-sand bg-white p-5 transition-shadow hover:shadow-md">
+    <article className="group relative flex h-full flex-col overflow-hidden rounded-xl border border-sand bg-white transition-shadow hover:shadow-md">
+      {article.heroImage && (
+        <div className="border-b border-sand">
+          {/* eslint-disable-next-line @next/next/no-img-element */}
+          <img
+            src={article.heroImage}
+            alt=""
+            loading="lazy"
+            className="aspect-[16/9] w-full object-cover"
+          />
+        </div>
+      )}
+      <div className="flex flex-1 flex-col p-5">
       <div className="mb-2 flex items-center gap-2 text-xs font-medium uppercase tracking-wide text-ink/50">
         {categoryName && <span className="text-accent">{categoryName}</span>}
         {fm.status === "draft" && (
@@ -36,6 +48,7 @@ export function ArticleCard({
         </time>{" "}
         · {article.readingMinutes} min read
       </p>
+      </div>
     </article>
   );
 }

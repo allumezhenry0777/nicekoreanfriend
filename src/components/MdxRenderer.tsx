@@ -35,6 +35,21 @@ const components = {
       </a>
     );
   },
+  img: ({ src = "", alt = "", title }: { src?: string; alt?: string; title?: string }) => (
+    <figure className="my-8">
+      {/* Brand SVG illustration — eslint-disable-next-line @next/next/no-img-element */}
+      {/* eslint-disable-next-line @next/next/no-img-element */}
+      <img
+        src={typeof src === "string" ? src : ""}
+        alt={alt}
+        loading="lazy"
+        className="w-full rounded-xl border border-sand bg-white"
+      />
+      {title && (
+        <figcaption className="mt-2 text-center text-sm text-ink/50">{title}</figcaption>
+      )}
+    </figure>
+  ),
 };
 
 export function MdxRenderer({ source }: { source: string }) {
