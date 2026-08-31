@@ -7,11 +7,15 @@ export function SiteHeader() {
   return (
     <header className="sticky top-0 z-40 border-b border-sand bg-cream/95 backdrop-blur">
       <div className="mx-auto flex h-16 max-w-6xl items-center justify-between gap-4 px-4">
-        <Link href="/" className="flex items-baseline gap-1 font-bold tracking-tight text-ink">
-          <span className="text-xl">Nice Korean Friend</span>
-          <span aria-hidden className="text-accent">
-            .
-          </span>
+        <Link href="/" className="flex shrink-0 items-center" aria-label="Nice Korean Friend — home">
+          {/* eslint-disable-next-line @next/next/no-img-element */}
+          <img
+            src="/logo-light.svg"
+            alt="Nice Korean Friend"
+            width={455}
+            height={80}
+            className="h-8 w-auto sm:h-9"
+          />
         </Link>
         <nav aria-label="Main" className="hidden items-center gap-6 text-sm font-medium text-ink/80 md:flex">
           <Link href="/start-here" className="hover:text-accent">

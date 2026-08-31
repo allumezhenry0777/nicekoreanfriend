@@ -2,11 +2,12 @@
 @plugin "@tailwindcss/typography";
 
 @theme {
-  --color-ink: #1f2733;
+  /* Brand palette — matches the logo (navy / taegeuk red / taegeuk blue) */
+  --color-ink: #13294b;
   --color-cream: #faf7f2;
   --color-sand: #e8e0d4;
-  --color-accent: #d94f45;
-  --color-sea: #2b5d8a;
+  --color-accent: #e8434e;
+  --color-sea: #2b5bd7;
   --font-sans: var(--font-inter), ui-sans-serif, system-ui, -apple-system, "Segoe UI", sans-serif;
 }
 

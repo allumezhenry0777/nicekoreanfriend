@@ -9,10 +9,15 @@ export function SiteFooter() {
     <footer className="mt-16 border-t border-sand bg-ink text-cream">
       <div className="mx-auto grid max-w-6xl gap-10 px-4 py-12 sm:grid-cols-2 lg:grid-cols-4">
         <div>
-          <p className="text-lg font-bold">
-            Nice Korean Friend<span className="text-accent">.</span>
-          </p>
-          <p className="mt-2 text-sm text-cream/70">{site.tagline}</p>
+          {/* eslint-disable-next-line @next/next/no-img-element */}
+          <img
+            src="/logo-dark.svg"
+            alt="Nice Korean Friend"
+            width={455}
+            height={80}
+            className="h-8 w-auto"
+          />
+          <p className="mt-3 text-sm text-cream/70">{site.tagline}</p>
           <p className="mt-4 text-xs leading-relaxed text-cream/60">
             Some pages may contain ads or affiliate links. If you buy through them, we may earn a
             commission at no extra cost to you. See our{" "}
