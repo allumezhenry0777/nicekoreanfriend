@@ -105,13 +105,13 @@ Her editing rule: if her foreign friends would still have a follow-up question a
   },
   {
     slug: "jun",
-    name: "Jun Lee",
-    role: "Co-founder & Writer — repatriated Korean",
+    name: "Henry Lee",
+    role: "Co-founder & Writer",
     shortBio:
-      "Jun grew up abroad, moved back to Korea as an adult, and hit every foreigner problem himself — visa runs, bank rejections, apartment contracts — with a Korean passport and an outsider's confusion.",
-    body: `Jun is Korean on paper and foreign in experience: he grew up overseas and moved to Seoul as an adult, which means he has personally stood in the wrong immigration line, been rejected for a bank account, and mistranslated a lease clause. He writes the survival-paperwork guides so you don't repeat his mistakes.
+      "Henry holds a graduate degree from Korea University and has worked at tech startups and venture capital firms. He brings extensive international experience and a strong global network.",
+    body: `Henry holds a graduate degree from Korea University and has worked across tech startups and venture capital. His international experience and global network give him a broad perspective on Korea and its connections to the wider world.
 
-His writing rule: every step in a how-to must have actually been done, by him, recently.
+His writing focuses on sharing practical, globally informed insights about Korea.
 
 **Beat:** money & banking, living in Korea, phone & internet, health & safety
 **Languages:** English (native), Korean (fluent)`,
