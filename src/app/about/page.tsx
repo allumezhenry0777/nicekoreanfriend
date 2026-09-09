@@ -25,21 +25,25 @@ export default function AboutPage() {
       <h2>What we believe</h2>
       <ul>
         <li>
-          <strong>Say the real thing.</strong> If the airport rail express isn’t worth it from your
-          terminal, we say so. If a tourist favorite is overpriced, we say that too — nicely, the
-          way a friend would.
+          <strong>Honest advice, without the tourist hype.</strong> We share what locals genuinely
+          think — what is worth your time, what is not, and what you should know before you go.
         </li>
         <li>
-          <strong>Answer first, story later.</strong> Every guide opens with a Quick Answer, because
-          you might be reading it on airport WiFi with 4% battery.
+          <strong>Practical answers, clearly explained.</strong> We start with the information you
+          need most, then add the context that helps you understand Korea better.
         </li>
         <li>
-          <strong>Dates on everything.</strong> Korea changes fast. Every guide shows when it was
-          last checked, and we’d rather mark a number “[VERIFY]” than guess.
+          <strong>Local insight with a global perspective.</strong> We combine firsthand knowledge
+          of Korea with an understanding of the questions and challenges international visitors
+          often face.
         </li>
         <li>
-          <strong>Respect both sides.</strong> We explain Korean customs so visitors get more out
-          of Korea — and so Korea gets nicer visitors.
+          <strong>Current and carefully checked.</strong> Korea changes quickly, so we review our
+          guides regularly and clearly note when information may need confirmation.
+        </li>
+        <li>
+          <strong>Respect goes both ways.</strong> We help visitors understand Korean culture and
+          customs so they can explore with confidence, curiosity, and consideration.
         </li>
       </ul>
 
