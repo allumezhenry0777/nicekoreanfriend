@@ -92,15 +92,15 @@ const categories = [
 const authors = [
   {
     slug: "minji",
-    name: "Minji Park",
-    role: "Co-founder & Editor — Seoul native",
+    name: "Kate Shim",
+    role: "Co-founder & Editor",
     shortBio:
-      "Born and raised in Seoul, Minji spent years answering the same questions from foreign friends before deciding to write the answers down properly.",
-    body: `Minji grew up in Seoul and has been the designated “Korean friend” for exchange students, coworkers and travel buddies for over a decade. She covers food, culture, etiquette and the little unwritten rules locals forget are unwritten.
+      "A Korea native and graduate of Ewha Womans University, Kate is passionate about wellness, food, and health. She helps international visitors discover Korea's hidden charms.",
+    body: `Kate is a Korea native and a graduate of Ewha Womans University. With a deep interest in wellness, food, and health, she helps international visitors look beyond the familiar highlights and discover the hidden charms of life in Korea.
 
-Her editing rule: if her foreign friends would still have a follow-up question after reading a guide, the guide isn't finished.
+Her writing brings a local perspective to the experiences that make Korea genuinely memorable.
 
-**Beat:** food & dining, culture & etiquette, getting around
+**Beat:** wellness, food & dining, health, culture
 **Languages:** Korean (native), English`,
   },
   {
