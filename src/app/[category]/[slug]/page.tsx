@@ -11,6 +11,7 @@ import { QuickAnswer } from "@/components/QuickAnswer";
 import { TableOfContents } from "@/components/TableOfContents";
 import { AdSlot } from "@/components/AdSlot";
 import { ArticleCard } from "@/components/ArticleCard";
+import { ArticleSources } from "@/components/ArticleSources";
 import { articleJsonLd, breadcrumbJsonLd, faqPageJsonLd } from "@/lib/jsonld";
 import { absoluteUrl, site } from "@/lib/site";
 
@@ -142,6 +143,8 @@ export default async function ArticlePage({ params }: Props) {
         </div>
 
         <FaqSection faqs={fm.faqs} />
+
+        <ArticleSources sources={fm.sources ?? []} checkedDate={fm.dateModified} />
 
         <AdSlot slot="article-bottom" />
 
