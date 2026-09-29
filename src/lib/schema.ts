@@ -11,6 +11,7 @@ export const CATEGORY_SLUGS = [
   "culture-etiquette",
   "work-study-visas",
   "places-ive-been",
+  "korea-must-buys",
 ] as const;
 
 export const TEMPLATES = ["how-to", "explainer", "listicle", "comparison"] as const;

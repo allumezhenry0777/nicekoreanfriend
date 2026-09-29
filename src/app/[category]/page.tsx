@@ -71,6 +71,8 @@ export default async function CategoryPage({ params }: Props) {
           <p className="text-ink/60">
             {cat.slug === "places-ive-been"
               ? "The first visit stories are coming soon, with my own photos and videos."
+              : cat.slug === "korea-must-buys"
+              ? "The first product picks are coming soon. Check back for Korean finds worth bringing home."
               : "The first guides in this section are being researched now."}
           </p>
         ) : (
