@@ -113,6 +113,10 @@ const motifs = {
   pill: `${S("M30 40 a16 16 0 0 1 22 -22 l18 18 a16 16 0 0 1 -22 22 l-18 -18 Z", 5, CREAM)}${S("M41 29 l18 18", 5, "none", RED)}<circle cx="38" cy="60" r="10" fill="${BLUE}" opacity="0.7"/>`,
 };
 
+// ---- Extra motifs: study & visas ----
+motifs.grad = `${S("M14 38 l36 -16 l36 16 l-36 16 Z", 5, CREAM)}${S("M30 48 v18 c0 6 40 6 40 0 v-18", 5)}${S("M86 38 v22", 4, "none", RED)}<circle cx="86" cy="64" r="4" fill="${RED}"/>`;
+motifs.docs = `${S("M24 14 h36 l16 16 v54 h-52 Z", 5, CREAM)}${S("M60 14 v16 h16", 4)}${S("M34 46 h32 M34 56 h32 M34 66 h20", 4)}<circle cx="66" cy="68" r="10" fill="none" stroke="${RED}" stroke-width="4"/>${S("M61 68 l4 4 l7 -8", 3.5, "none", RED)}`;
+
 // ---- Article → [motifA, accentA, motifB, accentB] ----
 const articleArt = {
   "t-money-card-guide": ["card_tap", RED, "gate", BLUE],
@@ -140,6 +144,7 @@ const categoryArt = {
   "living-in-korea": ["house", BLUE, "box", RED],
   "health-safety": ["cross", RED, "pill", BLUE],
   "culture-etiquette": ["greet", BLUE, "speech", RED],
+  "work-study-visas": ["docs", RED, "grad", BLUE],
 };
 
 let n = 0;
