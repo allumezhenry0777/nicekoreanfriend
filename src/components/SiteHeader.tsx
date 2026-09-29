@@ -22,7 +22,7 @@ export function SiteHeader() {
             Start Here
           </Link>
           <Link href="/places-ive-been" className="font-semibold text-accent hover:underline">
-            Places I’ve Been
+            My Local Picks
           </Link>
           <Link href="/about" className="hover:text-accent">
             About
