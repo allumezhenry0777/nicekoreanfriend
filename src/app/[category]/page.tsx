@@ -68,7 +68,11 @@ export default async function CategoryPage({ params }: Props) {
 
       <section className="mt-10" aria-label={`${cat.frontmatter.name} guides`}>
         {published.length === 0 ? (
-          <p className="text-ink/60">The first guides in this section are being researched now.</p>
+          <p className="text-ink/60">
+            {cat.slug === "places-ive-been"
+              ? "The first visit stories are coming soon, with my own photos and videos."
+              : "The first guides in this section are being researched now."}
+          </p>
         ) : (
           <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
             {published.map((a) => (

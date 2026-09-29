@@ -21,14 +21,8 @@ export function SiteHeader() {
           <Link href="/start-here" className="hover:text-accent">
             Start Here
           </Link>
-          <Link href="/first-72-hours" className="hover:text-accent">
-            First 72 Hours
-          </Link>
-          <Link href="/getting-around" className="hover:text-accent">
-            Getting Around
-          </Link>
-          <Link href="/food-dining" className="hover:text-accent">
-            Food
+          <Link href="/places-ive-been" className="font-semibold text-accent hover:underline">
+            Places I’ve Been
           </Link>
           <Link href="/about" className="hover:text-accent">
             About
@@ -48,6 +42,17 @@ export function SiteHeader() {
           }))}
         />
       </div>
+      <nav aria-label="Guide topics" className="hidden border-t border-sand/70 md:block">
+        <ul className="mx-auto flex max-w-6xl flex-wrap items-center gap-x-4 gap-y-1 px-4 py-2 text-xs font-medium text-ink/80 xl:text-[13px]">
+          {categories.filter((c) => c.slug !== "places-ive-been").map((c) => (
+            <li key={c.slug}>
+              <Link href={`/${c.slug}`} className="block rounded py-1 hover:text-accent focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent">
+                {c.frontmatter.name}
+              </Link>
+            </li>
+          ))}
+        </ul>
+      </nav>
     </header>
   );
 }

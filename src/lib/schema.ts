@@ -10,6 +10,7 @@ export const CATEGORY_SLUGS = [
   "health-safety",
   "culture-etiquette",
   "work-study-visas",
+  "places-ive-been",
 ] as const;
 
 export const TEMPLATES = ["how-to", "explainer", "listicle", "comparison"] as const;

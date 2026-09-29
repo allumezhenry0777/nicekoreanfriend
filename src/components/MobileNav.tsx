@@ -22,7 +22,7 @@ export function MobileNav({ categories }: { categories: Cat[] }) {
       {open && (
         <div
           id="mobile-menu"
-          className="absolute inset-x-0 top-16 z-50 border-b border-sand bg-cream px-4 py-4 shadow-lg"
+          className="absolute inset-x-0 top-16 z-50 max-h-[calc(100dvh-4rem)] overflow-y-auto border-b border-sand bg-cream px-4 py-4 shadow-lg"
         >
           <nav aria-label="Mobile" className="grid gap-1">
             <Link
