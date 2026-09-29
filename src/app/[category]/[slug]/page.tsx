@@ -129,6 +129,9 @@ export default async function ArticlePage({ params }: Props) {
               height={450}
               className="w-full rounded-2xl border border-sand bg-white"
             />
+            {fm.heroCaption && (
+              <figcaption className="mt-2 text-sm text-ink/60">{fm.heroCaption}</figcaption>
+            )}
           </figure>
         )}
 

@@ -69,38 +69,30 @@ function imageIfExists(relPath: string): string | undefined {
 /**
  * Every article gets two editorial images: a hero (rendered by the page
  * template) and an inline one injected before the article's 2nd H2. A
- * topic-specific raster photo wins when present, followed by the category
- * photo set. The original SVG artwork remains as a final fallback.
+ * dedicated raster photo wins when present, followed by its own SVG.
+ * Never reuse category images: check-images enforces unique article artwork.
  */
-function resolveArtwork(fm: ArticleFrontmatter, slug: string) {
+function resolveArtwork(slug: string) {
   const own = `/images/articles/${slug}`;
-  const cat = `/images/categories/${fm.category}`;
   const hero =
     imageIfExists(`${own}-1.webp`) ??
     imageIfExists(`${own}-1.jpg`) ??
     imageIfExists(`${own}-1.png`) ??
-    imageIfExists(`${cat}-1.webp`) ??
-    imageIfExists(`${cat}-1.jpg`) ??
-    imageIfExists(`${cat}-1.png`) ??
-    imageIfExists(`${own}-1.svg`) ??
-    imageIfExists(`${cat}-1.svg`);
+    imageIfExists(`${own}-1.svg`);
   const inline =
     imageIfExists(`${own}-2.webp`) ??
     imageIfExists(`${own}-2.jpg`) ??
     imageIfExists(`${own}-2.png`) ??
-    imageIfExists(`${cat}-2.webp`) ??
-    imageIfExists(`${cat}-2.jpg`) ??
-    imageIfExists(`${cat}-2.png`) ??
-    imageIfExists(`${own}-2.svg`) ??
-    imageIfExists(`${cat}-2.svg`);
+    imageIfExists(`${own}-2.svg`);
   return { hero, inline };
 }
 
-function injectInlineImage(body: string, imgPath: string, alt: string): string {
+function injectInlineImage(body: string, imgPath: string, alt: string, caption?: string): string {
   const marker = "\n## ";
   const first = body.indexOf(marker);
   const second = first === -1 ? -1 : body.indexOf(marker, first + 1);
-  const md = `\n![${alt}](${imgPath} "${alt}")\n`;
+  const title = (caption ? `${alt} — ${caption}` : alt).replace(/"/g, "&quot;");
+  const md = `\n![${alt}](${imgPath} "${title}")\n`;
   if (second === -1) return body + md;
   return body.slice(0, second) + md + body.slice(second);
 }
@@ -121,10 +113,10 @@ export function getAllArticles(): Article[] {
       throw new FrontmatterError(`content/articles/${file}`, formatIssues(parsed.error));
     }
     const slug = file.replace(/\.mdx?$/, "");
-    const art = resolveArtwork(parsed.data, slug);
+    const art = resolveArtwork(slug);
     const body =
       art.inline !== undefined
-        ? injectInlineImage(content, art.inline, parsed.data.inlineAlt ?? `${parsed.data.title} — editorial photo`)
+        ? injectInlineImage(content, art.inline, parsed.data.inlineAlt ?? `${parsed.data.title} — editorial photo`, parsed.data.inlineCaption)
         : content;
     return {
       slug,

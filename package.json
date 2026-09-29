@@ -4,13 +4,14 @@
   "private": true,
   "scripts": {
     "dev": "next dev --turbopack",
-    "prebuild": "npm run validate-content && npm run check-links",
+    "prebuild": "npm run validate-content && npm run check-links && npm run check-images",
     "build": "next build --turbopack",
     "postbuild": "pagefind --site .next/server/app --output-path public/pagefind",
     "start": "next start",
     "lint": "eslint",
     "validate-content": "tsx scripts/validate-content.ts",
     "check-links": "tsx scripts/check-links.ts",
+    "check-images": "tsx scripts/check-images.ts",
     "generate-placeholders": "node scripts/generate-placeholders.mjs"
   },
   "dependencies": {
@@ -32,6 +33,7 @@
     "eslint": "^9",
     "eslint-config-next": "15.5.24",
     "pagefind": "^1.5.2",
+    "sharp": "0.35.4",
     "tailwindcss": "^4",
     "tsx": "^4.23.12",
     "typescript": "^5"

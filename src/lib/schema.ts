@@ -46,6 +46,8 @@ export const articleFrontmatterSchema = z
     status: z.enum(["draft", "published"]),
     heroAlt: z.string().optional(),
     inlineAlt: z.string().optional(),
+    heroCaption: z.string().optional(),
+    inlineCaption: z.string().optional(),
     sources: z.array(z.string()).optional(),
   })
   .strict()
