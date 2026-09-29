@@ -124,7 +124,7 @@ export function getAllArticles(): Article[] {
     const art = resolveArtwork(parsed.data, slug);
     const body =
       art.inline !== undefined
-        ? injectInlineImage(content, art.inline, `${parsed.data.title} — editorial photo`)
+        ? injectInlineImage(content, art.inline, parsed.data.inlineAlt ?? `${parsed.data.title} — editorial photo`)
         : content;
     return {
       slug,

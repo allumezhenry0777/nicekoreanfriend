@@ -43,6 +43,7 @@ export const articleFrontmatterSchema = z
     faqs: z.array(faqSchema).min(3, "every article needs at least 3 FAQs"),
     status: z.enum(["draft", "published"]),
     heroAlt: z.string().optional(),
+    inlineAlt: z.string().optional(),
     sources: z.array(z.string()).optional(),
   })
   .strict()

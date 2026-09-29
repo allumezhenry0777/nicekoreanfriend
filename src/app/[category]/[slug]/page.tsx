@@ -124,7 +124,7 @@ export default async function ArticlePage({ params }: Props) {
             {/* eslint-disable-next-line @next/next/no-img-element */}
             <img
               src={article.heroImage}
-              alt={`${fm.title} — editorial photo`}
+              alt={fm.heroAlt ?? `${fm.title} — editorial photo`}
               width={800}
               height={450}
               className="w-full rounded-2xl border border-sand bg-white"
