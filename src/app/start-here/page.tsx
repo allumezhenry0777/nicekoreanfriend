@@ -69,6 +69,18 @@ const groups: ChecklistGroup[] = [
         href: "/first-72-hours/essential-apps-korea",
       },
       {
+        id: "visitor-accounts",
+        label: "Check what works without a Korean phone number",
+        detail: "Separate visitor booking options from services that need Korean identity verification.",
+        href: "/first-72-hours/korea-without-korean-phone-number",
+      },
+      {
+        id: "restaurant-booking",
+        label: "Check restaurant reservations and waitlists",
+        detail: "Confirm the branch, deposit terms and how you will be notified before heading out.",
+        href: "/food-dining/korea-restaurant-reservations-guide",
+      },
+      {
         id: "convenience",
         label: "Do a convenience-store supply run",
         detail: "GS25, CU and 7-Eleven cover meals, chargers, umbrellas and banking basics.",

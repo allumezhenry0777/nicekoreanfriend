@@ -5,7 +5,7 @@ category: phone-internet
 template: explainer
 author: jun
 datePublished: "2026-09-26"
-dateModified: "2026-09-26"
+dateModified: "2026-10-05"
 tags:
   - "identity-verification"
   - "bon-in-injeung"
@@ -13,19 +13,20 @@ tags:
   - "arc"
   - "korean-phone"
   - "digital-certificate"
-quickAnswer: "본인인증 (identity verification) is Korea's way of proving you are a real, registered person online. It fails for most foreigners because it needs a Korean mobile number registered in your own name — and usually an ARC behind it. The fastest fix is a postpaid phone plan in your name, then the PASS app or a bank certificate. A passport-only prepaid SIM almost never passes."
+quickAnswer: "본인인증 (identity verification) is Korea's way of proving you are a real, registered person online. It fails for most foreigners because it needs a Korean mobile number registered in your own name — and usually an ARC behind it. Check that your carrier supports verification for your exact plan and has your own residence-card details; postpaid billing alone does not guarantee eligibility. A passport-only prepaid SIM almost never passes."
 faqs:
   - question: "Why does 본인인증 keep failing even though my Korean phone works?"
     answer: "Because your number is probably registered under a passport, an employer, a school, or a friend — not under your own ARC. The line makes calls fine, but verification checks the name and registration behind it. If the name on your carrier record, your ARC, and your bank don't match exactly, it fails."
   - question: "Can I do 본인인증 without an ARC?"
     answer: "For most banking, shopping, and government services, no. Verification is tied to a 13-digit resident or foreigner registration number, and foreigners get that number from their ARC. A few government sites accept passport-based verification, but the mainstream apps effectively need an ARC."
   - question: "Which verification method should a new foreigner set up first?"
-    answer: "Get an ARC, then a postpaid phone plan in your own name, then register the PASS app or your carrier SMS verification. After you open a bank account, add a 금융인증서 (financial certificate). That combination unlocks almost everything."
+    answer: "Get your residence card, ask a carrier which plans support identity verification in your name, then set up carrier SMS verification or PASS if supported. After you open a bank account, add a 금융인증서 (financial certificate). That combination unlocks almost everything."
 status: published
 inlineCaption: "AI-generated illustration; not a documentary photograph."
 heroAlt: "A hand holding a smartphone displaying a weather website"
 inlineAlt: "A conceptual verification check mark beside a blank card and closed passport"
 sources:
+  - "https://www.passauth.co.kr/question"
   - "https://mglobalcommunity.lguplus.com/hc/en-us/articles/17151394993945--Identity-verification-As-a-foreigner-can-I-use-the-PASS-app-to-verify-my-identity"
   - "https://www.kimchimobile.com/korean-phone-number-verification/"
   - "https://k-life.co/life/7340"
@@ -49,7 +50,7 @@ That's why a working phone isn't enough. The system checks the **name and regist
 
 ## The main verification routes (and when each works)
 
-**1. Mobile-carrier verification — 휴대폰 본인인증 (*hyudaepon bon-in-injeung*).** You enter your carrier, name, registration number, and phone number, then approve an SMS code. This is the default everywhere. It works **only if the line is postpaid and registered in your own name against your ARC**. A passport-only prepaid SIM will almost always fail here.
+**1. Mobile-carrier verification — 휴대폰 본인인증 (*hyudaepon bon-in-injeung*).** You enter your carrier, name, registration number, and phone number, then approve an SMS code. This is the default everywhere. You need a **supported line registered in your own name with the identity details required by the carrier**. Do not use prepaid versus postpaid as the sole test: ask the provider whether your exact plan supports foreign-resident SMS verification and PASS. A passport-only prepaid SIM will almost always fail here.
 
 **2. The PASS app.** A single app from SKT, KT, and LG U+ that stores your verification so you tap once instead of typing everything. Foreigners *can* use PASS — but generally only when the phone contract was opened with an ARC (or overseas-Korean/permanent-resident card) in your name. Prepaid lines activated on a passport typically can't register for PASS.
 
@@ -70,17 +71,17 @@ Here's the loop that traps almost everyone:
 - A real (postpaid) line in your name needs an **ARC** and usually a **Korean bank account** for autopay.
 - Opening a bank account and getting an ARC takes time after you land.
 
-So on day one, with a passport-only tourist SIM, you can browse but you can't *register* for the things that matter. That's normal. You're not doing anything wrong — the sequence just has to happen in order.
+A tourist SIM does not unlock every domestic verification flow, but visitor-facing services may accept overseas accounts and cards. Start with [what you can use without a Korean number](/first-72-hours/korea-without-korean-phone-number).
 
 ## The practical order of operations
 
 Do these in sequence and you'll unlock most of Korea's digital life:
 
 1. **Get your ARC.** Everything downstream depends on it. See [Your Residence Card (ARC)](/living-in-korea/arc-residence-card-guide).
-2. **Get a real phone plan in your own name.** A postpaid contract registered to your ARC is the key that turns the whole lock. See [Getting a Real Korean Phone Plan as a Resident](/phone-internet/korea-phone-plan-residents). If you're still on a [prepaid SIM](/phone-internet/korea-prepaid-sim-guide), ask your provider to re-register the line under your ARC once you have it.
-3. **Register PASS or carrier SMS verification** on that line. Now 휴대폰 본인인증 will start passing.
+2. **Choose a verification-capable plan in your own name.** Confirm both the supported identity document and verification features with the carrier before signing up. See [Getting a Real Korean Phone Plan as a Resident](/phone-internet/korea-phone-plan-residents). If you're still on a [prepaid SIM](/phone-internet/korea-prepaid-sim-guide), ask your provider to re-register the line under your ARC once you have it.
+3. **Register PASS or carrier SMS verification** on that line. If it fails, check the exact name format, foreigner option and carrier/MVNO selection with your provider.
 4. **Open a bank account** and issue a 금융인증서. See [How to Open a Korean Bank Account as a Foreigner](/money-banking/open-bank-account-korea).
-5. **Set up the pay apps** (KakaoPay, Toss, etc.), which will verify cleanly once steps 2–4 are done.
+5. **Set up the pay apps** (KakaoPay, Toss, etc.), checking each service’s separate eligibility and payment requirements.
 
 ## Which services actually demand it
 
@@ -95,7 +96,7 @@ Basically: the more a service touches money, your legal status, or your address,
 
 **"My SIM works, so verification should work."** Making calls and passing 본인인증 are two different tests. Data and calls run on the network; verification checks *who the line is registered to*.
 
-**"A prepaid SIM is fine."** For calls, yes. For verification, usually no — unless it's registered against your ARC rather than your passport.
+**"A prepaid SIM is fine."** Calls, SMS reception and identity verification are separate features. Ask whether your exact prepaid plan supports verification after registration with your residence card; do not assume either all prepaid plans work or none do.
 
 **"I'll just use my friend's phone or a work phone."** It'll fail or, worse, verify as *them*. The name must be yours, everywhere.
 
